@@ -1,0 +1,14 @@
+---
+version: "3.8"
+services:
+  surrealdb:
+    image: ./surrealdb/Dockerfile
+    volumes:
+      - dbdata
+    ports:
+      - 8000
+    environment:
+      SURREAL_USER: ${SURREAL_USER}
+      SURREAL_PASS: ${SURREAL_PASS}
+  nodejs:
+    image: ./nodejs/Dockerfile
